@@ -1,10 +1,14 @@
 # reproducible-mysqldump-for-vcs
 
-Builds a reproducible XML and SQL version of schema from 'mysqldump', so only schema changes trigger changes in the schema files.
+Builds a reproducible XML and SQL version of schema from '`mysqldump`', so only actual schema changes trigger file changes, and file changes trigger git commits (of the SQL schema itself from `mysqldump`).
 
-This is a simple bash script for running `mysqldump`.  It is setup to generate both XML and SQL output files, by default one-file-per format.  
+Overall, this is a simple bash script for running `mysqldump` with a bunch of regex added.  It is setup to generate both XML and SQL output files, one-file-per-format default, and makes the assumption that you are only dumping one database.
 
-The script "assumes" many, many things.  You will want to clone and copy it yourself for modification.  There is no installation, configuration file, or anything of that nature.  Simply a `.sh` script that is ready to go.
+The script assumes many things.  You will want to clone/copy/modify the script directly to use.  There is no installation, configuration file, or anything of that nature.  Simply a `.sh` script that is partially ready to go.  
+
+The file itself is commented and should be easy to navigate.  You should be able to get started by only setting a `HOST`, and setting up a `my.cnf` ([mySQL my.cnf documentation](https://dev.mysql.com/doc/refman/8.0/en/option-files.html)) file if you haven't already, and finally a `TARGET`.
+
+The rest would be customization.
 
 ## The Idea
 
