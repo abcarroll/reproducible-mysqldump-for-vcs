@@ -20,8 +20,8 @@ COMMON_OPTION="--log-error=error.log --skip-opt --force --no-data --quick --all-
 # DUMP_TARGET="mydb"
 
 # Output files
-SQL_FILE="full-schema.sql"
-XML_FILE="full-schema.xml"
+SQL_FILE="schema/${DUMP_TARGET}.sql"
+XML_FILE="schema/${DUMP_TARGET}.xml"
 
 # All options put together entirely.
 FULL_OPTION="-h ${HOST} ${COMMON_OPTION} ${CUSTOM_OPTION} ${DUMP_TARGET}"
